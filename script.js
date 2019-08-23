@@ -3,7 +3,6 @@ const input1 = document.getElementById('input1')
 const input2 = document.getElementById('input2')
 const inputs = document.getElementById('inputs')
 const buttons = document.getElementById('buttons')
-const clear = document.getElementById('clear')
 const result = document.getElementById('result')
 
 // Sanitize Inputs
@@ -25,6 +24,10 @@ const calculate = method => (a, b) => {
       return a * b
     case 'divide':
       return a / b
+    case 'clear':
+      input1.value = ''
+      input2.value = ''
+      return '0'
     default:
       return 'error'
   }
