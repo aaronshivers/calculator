@@ -1,34 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/normalize.css">
-  <link rel="stylesheet" type="text/css" href="/styles.css">
-  <title>Simple Calculator</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>calculator</title>
 </head>
 <body>
-  <main>
-    <h1>Simple Calculator</h1>
-  
-    <div id="calculator">
+  <div class="container">
+    
+    <div class="calculator">
 
-      <p id="result"></p>
+      <div class="calculator__display">0</div>
 
-      <div id="inputs">
-        <input type="text" name="input1" id="input1">
-        <input type="text" name="input2" id="input2">
+      <div class="calculator__keys">
+        
+        <button class="key--operator" data-action="add">+</button>
+        <button class="key--operator" data-action="subtract">-</button>
+        <button class="key--operator" data-action="multiply">&times;</button>
+        <button class="key--operator" data-action="divide">÷</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>0</button>
+        <button data-action="decimal">.</button>
+        <button data-action="clear">AC</button>
+        <button class="key--equal" data-action="calculate">=</button>
       </div>
-
-      <div id="buttons">
-        <button id="add">+</button>
-        <button id="subtract">-</button>
-        <button id="multiply">&#215;</button>
-        <button id="divide">&#247;</button>
-        <button id="clear">C</button>
-      </div>
-
     </div>
-  </main>
+  </div>
 
   <script src="/script.js"></script>
 </body>
