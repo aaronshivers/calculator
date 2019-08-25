@@ -1,38 +1,114 @@
-html {
-  font-size: 1.5rem;
-  font-family: monospace;
-  color: #123;
-  background-color: #fefeff;
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  outline: none;
+  appearance: none;
+  text-align: left;
 }
 
-main {
-  display: flex;
-  justify-content: center;
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+button:hover,
+button:active,
+button:focus {
+  outline: none;
+}
+
+:root {
+  font-family: 'Courier New', Arial;
+  --white: #fff;
+  --off-white: #FAFAFF ;
+  --black: #171d1c;
+  --primary: #B3BFB8;
+  --secondary: #7E8D85;
+  --alt: #379634;
+}
+
+html {
+  font-size: 175%;
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+body {
   align-items: center;
+  background: var(--off-white);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.container {
+  max-width: 20em;
+}
+
+.container > p {
   text-align: center;
 }
 
-#calculator {
+.calculator {
+  border: 1px solid var(--black);
+  box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  max-width: 15em;
+  overflow: hidden;
+}
+
+.calculator__display {
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 1.714285714em;
+  padding: 0.5em 0.75em;
+  text-align: right;
+  border-bottom: 1px solid var(--black);
+}
+
+.calculator__keys {
+  background-color: var(--black);
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator__keys > * {
+  background-color: var(--primary);
+  padding: 0.5em 1.26em;
+  position: relative;
+  text-align: center;
+}
+
+.calculator__keys > *:active::before,
+.calculator__keys > .is-depressed::before {
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5) inset;
+  content: "";
+  left: 0;
+  opacity: 0.3;
   position: absolute;
-  top: 30%;
-  transform: translateY(-50%);
+  right: 0;
+  top: 0;
+  z-index: 1;
 }
 
-input {
-  border: 1px solid #123;
-  padding: 15px;
-  margin-bottom: 15px;
+.key--operator {
+  background-color: var(--secondary);
 }
 
-button {
-  padding: 15px;
-  margin: -6px;
-  background-color: #123;
-  color: white;
-  /*border: 1px solid white;*/
-  border: none;
-}
-
-p {
-  font-size: 2rem
+.key--equal {
+  background-color: var(--alt);
+  grid-column: -2;
+  grid-row: 2 / span 4;
 }
